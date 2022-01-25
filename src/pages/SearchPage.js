@@ -1,11 +1,8 @@
 import React from "react";
+import SearchMovie from "../components/SearchMovie";
 
 const SearchPage = () => {
-  return (
-    <>
-      <h1>Search Page</h1>
-    </>
-  );
+  return <SearchMovie />;
 };
 
 export default SearchPage;
