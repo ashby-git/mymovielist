@@ -1,13 +1,14 @@
-import React, { useState, useRef } from "react";
-// import { useHistory } from "react-router-dom";
+import React, { useState, useRef, useContext } from "react";
+import { useHistory } from "react-router-dom";
+import AuthContext from "../../store/auth-context";
 import * as S from "./styles";
 
 const AuthForm = () => {
-  //   const history = useHistory();
+  const history = useHistory();
   const emailInputRef = useRef();
   const passwordInputRef = useRef();
 
-  //   const authCtx = useContext(AuthContext);
+  const authCtx = useContext(AuthContext);
 
   const [isLogin, setIsLogin] = useState(true);
   const [isLoading, setIsLoading] = useState(false);
@@ -58,13 +59,13 @@ const AuthForm = () => {
           });
         }
       })
-      //   .then((data) => {
-      //     const expirationTime = new Date(
-      //       new Date().getTime() + +data.expiresIn * 1000
-      //     );
-      //     authCtx.login(data.idToken, expirationTime.toISOString());
-      //     history.replace("/");
-      //   })
+      .then((data) => {
+        const expirationTime = new Date(
+          new Date().getTime() + +data.expiresIn * 1000
+        );
+        authCtx.login(data.idToken, expirationTime.toISOString());
+        history.replace("/");
+      })
       .catch((err) => {
         alert(err.message);
       });
