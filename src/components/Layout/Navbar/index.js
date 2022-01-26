@@ -13,7 +13,7 @@ const Navbar = () => {
   return (
     <S.Header>
       <S.LogoLink to="/">
-        <S.Logo>Logo</S.Logo>
+        <S.Logo>MyMovieList</S.Logo>
       </S.LogoLink>
       <nav>
         <S.NavLinkGroup>

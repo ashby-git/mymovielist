@@ -1,11 +1,8 @@
 import React from "react";
+import Welcome from "../components/Welcome";
 
 const HomePage = () => {
-  return (
-    <>
-      <h1>HomePage</h1>
-    </>
-  );
+  return <Welcome />;
 };
 
 export default HomePage;

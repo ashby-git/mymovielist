@@ -2,14 +2,14 @@ import styled from "styled-components";
 import { Link, NavLink } from "react-router-dom";
 
 export const Header = styled.header`
-  width: 100%;
+  /* width: 100%; */
   height: 5rem;
   background-color: #38015c;
   box-shadow: 0 1px 4px rgba(0, 0, 0, 0.2);
   display: flex;
   justify-content: space-between;
   align-items: center;
-  /* padding: 0 10%; */
+  padding: 0 10%;
 `;
 
 export const LogoLink = styled(Link)``;
