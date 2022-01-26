@@ -1,6 +1,7 @@
 import React, { useState, useRef, useContext } from "react";
 import { useHistory } from "react-router-dom";
 import AuthContext from "../../store/auth-context";
+import LoadingSpinner from "../UI/LoadingSpinner";
 import * as S from "./styles";
 
 const AuthForm = () => {
@@ -92,7 +93,10 @@ const AuthForm = () => {
           {!isLoading && (
             <S.FormButton>{isLogin ? "Login" : "Create Account"}</S.FormButton>
           )}
-          {isLoading && <p>Sending request...</p>}
+          {isLoading && (
+            //   <p>Sending request...</p>
+            <LoadingSpinner />
+          )}
           <S.FormButtonToggle type="button" onClick={switchAuthModeHandler}>
             {isLogin ? "Create new account" : "Login with existing account"}
           </S.FormButtonToggle>

@@ -23,7 +23,8 @@ function App() {
           </Route>
         )}
         <Route path="/search">
-          <SearchPage />
+          {authCtx.isLoggedIn && <SearchPage />}
+          {!authCtx.isLoggedIn && <Redirect to="/auth" />}
         </Route>
         <Route path="/profile">
           {authCtx.isLoggedIn && <ProfilePage />}
