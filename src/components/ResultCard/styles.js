@@ -2,7 +2,7 @@ import styled from "styled-components";
 
 export const ResultCardContainer = styled.div`
   display: flex;
-  margin-bottom: 20px;
+  /* margin-bottom: 20px; */
 `;
 
 export const PosterWrapper = styled.div``;

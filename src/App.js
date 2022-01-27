@@ -7,34 +7,37 @@ import HomePage from "./pages/HomePage";
 import ProfilePage from "./pages/ProfilePage";
 import SearchPage from "./pages/SearchPage";
 import AuthContext from "./store/auth-context";
+import { GlobalProvider } from "./store/GlobalState";
 
 function App() {
   const authCtx = useContext(AuthContext);
 
   return (
-    <Layout>
-      <Switch>
-        <Route path="/" exact>
-          <HomePage />
-        </Route>
-        {!authCtx.isLoggedIn && (
-          <Route path="/auth">
-            <AuthPage />
+    <GlobalProvider>
+      <Layout>
+        <Switch>
+          <Route path="/" exact>
+            <HomePage />
           </Route>
-        )}
-        <Route path="/search">
-          {authCtx.isLoggedIn && <SearchPage />}
-          {!authCtx.isLoggedIn && <Redirect to="/auth" />}
-        </Route>
-        <Route path="/profile">
-          {authCtx.isLoggedIn && <ProfilePage />}
-          {!authCtx.isLoggedIn && <Redirect to="/auth" />}
-        </Route>
-        <Route path="*">
-          <Redirect to="/" />
-        </Route>
-      </Switch>
-    </Layout>
+          {!authCtx.isLoggedIn && (
+            <Route path="/auth">
+              <AuthPage />
+            </Route>
+          )}
+          <Route path="/search">
+            {authCtx.isLoggedIn && <SearchPage />}
+            {!authCtx.isLoggedIn && <Redirect to="/auth" />}
+          </Route>
+          <Route path="/profile">
+            {authCtx.isLoggedIn && <ProfilePage />}
+            {!authCtx.isLoggedIn && <Redirect to="/auth" />}
+          </Route>
+          <Route path="*">
+            <Redirect to="/" />
+          </Route>
+        </Switch>
+      </Layout>
+    </GlobalProvider>
   );
 }
 
