@@ -1,5 +1,4 @@
 import React, { useContext } from "react";
-// import Moment from "react-moment";
 import { GlobalContext } from "../../store/GlobalState";
 import Card from "../UI/Card";
 import * as S from "./styles";
@@ -37,11 +36,7 @@ export const ResultCard = ({ movie }) => {
           <S.Header>
             <S.Title>{movie.title}</S.Title>
             <S.ReleaseDate>
-              {/* <Moment format="YYYY">{movie.release_date}</Moment> */}
-              {
-                movie.release_date
-                // .substring(0, 4)
-              }
+              {movie.release_date && movie.release_date.substring(0, 4)}
             </S.ReleaseDate>
           </S.Header>
 
@@ -50,14 +45,14 @@ export const ResultCard = ({ movie }) => {
               disabled={watchlistDisabled}
               onClick={() => addMovieToWatchlist(movie)}
             >
-              Add to Watchlist
+              Plan To Watch
             </S.Btn>
 
             <S.Btn
               disabled={watchedDisabled}
               onClick={() => addMovieToWatched(movie)}
             >
-              Add to Watched
+              Watched
             </S.Btn>
           </S.Controls>
         </S.Info>
