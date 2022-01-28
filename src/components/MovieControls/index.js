@@ -1,5 +1,6 @@
 import React, { useContext } from "react";
 import { GlobalContext } from "../../store/GlobalState";
+import { FaEye, FaEyeSlash, FaTimes } from "react-icons/fa";
 import * as S from "./styles";
 
 export const MovieControls = ({ type, movie }) => {
@@ -15,11 +16,11 @@ export const MovieControls = ({ type, movie }) => {
       {type === "watchlist" && (
         <>
           <S.ControlButton onClick={() => addMovieToWatched(movie)}>
-            {/* <i className="fa-fw far fa-eye"></i> */}
+            <FaEye />
           </S.ControlButton>
 
           <S.ControlButton onClick={() => removeMovieFromWatchlist(movie.id)}>
-            {/* <i className="fa-fw fa fa-times"></i> */}
+            <FaTimes />
           </S.ControlButton>
         </>
       )}
@@ -27,11 +28,11 @@ export const MovieControls = ({ type, movie }) => {
       {type === "watched" && (
         <>
           <S.ControlButton onClick={() => moveToWatchlist(movie)}>
-            {/* <i className="fa-fw far fa-eye-slash"></i> */}
+            <FaEyeSlash />
           </S.ControlButton>
 
           <S.ControlButton onClick={() => removeFromWatched(movie.id)}>
-            {/* <i className="fa-fw fa fa-times"></i> */}
+            <FaTimes />
           </S.ControlButton>
         </>
       )}
