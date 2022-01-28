@@ -1,5 +1,5 @@
 import React from "react";
-// import { MovieControls } from "./MovieControls";
+import { MovieControls } from "../MovieControls/index";
 import * as S from "./styles";
 
 export const MovieCard = ({ movie, type }) => {
@@ -12,7 +12,7 @@ export const MovieCard = ({ movie, type }) => {
         alt={`${movie.title} Poster`}
       />
 
-      {/* <MovieControls type={type} movie={movie} /> */}
+      <MovieControls type={type} movie={movie} />
     </S.MovieCardContainer>
   );
 };
