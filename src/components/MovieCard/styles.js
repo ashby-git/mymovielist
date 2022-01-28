@@ -16,9 +16,10 @@ export const Overlay = styled.div`
   width: 100%;
   height: 100%;
   border: 2px solid transparent;
-  transition: all 0.3s ease;
+  transition: all 0.15s ease;
+  box-sizing: border-box;
 
-  &:hover {
+  ${MovieCardContainer}:hover & {
     border: 3px solid #21d07a;
   }
 `;

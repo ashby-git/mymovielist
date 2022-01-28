@@ -1,4 +1,5 @@
 import styled from "styled-components";
+import { MovieCardContainer } from "../MovieCard/styles";
 
 export const InnerCardControls = styled.div`
   display: inline;
@@ -13,7 +14,7 @@ export const InnerCardControls = styled.div`
   opacity: 0;
   transition: all 0.3s ease;
 
-  &:hover {
+  ${MovieCardContainer}:hover & {
     opacity: 1;
   }
 `;
