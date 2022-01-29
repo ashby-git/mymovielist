@@ -2,7 +2,6 @@ import styled from "styled-components";
 import { Link, NavLink } from "react-router-dom";
 
 export const Header = styled.header`
-  /* width: 100%; */
   height: 5rem;
   background-color: #38015c;
   box-shadow: 0 1px 4px rgba(0, 0, 0, 0.2);
@@ -12,7 +11,10 @@ export const Header = styled.header`
   padding: 0 10%;
 `;
 
-export const LogoLink = styled(Link)``;
+export const LogoLink = styled(Link)`
+  text-decoration: inherit;
+  color: inherit;
+`;
 
 export const Logo = styled.div`
   font-family: "Lato", sans-serif;
@@ -27,6 +29,21 @@ export const NavLinkGroup = styled.ul`
   padding: 0;
   display: flex;
   align-items: baseline;
+
+  @media (max-width: 700px) {
+    display: none;
+  }
+`;
+
+export const MenuIconWrapper = styled.div`
+  color: white;
+  font-size: 2rem;
+  cursor: pointer;
+  display: none;
+
+  @media (max-width: 700px) {
+    display: block;
+  }
 `;
 
 export const NavLinkItem = styled.li`

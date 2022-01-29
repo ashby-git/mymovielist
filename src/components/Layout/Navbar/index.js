@@ -1,8 +1,9 @@
 import React, { useContext } from "react";
 import AuthContext from "../../../store/auth-context";
+import { FaBars } from "react-icons/fa";
 import * as S from "./styles";
 
-const Navbar = () => {
+const Navbar = ({ toggle }) => {
   const authCtx = useContext(AuthContext);
 
   const isLoggedIn = authCtx.isLoggedIn;
@@ -44,6 +45,9 @@ const Navbar = () => {
             </S.NavLinkItem>
           )}
         </S.NavLinkGroup>
+        <S.MenuIconWrapper onClick={toggle}>
+          <FaBars />
+        </S.MenuIconWrapper>
       </nav>
     </S.Header>
   );
