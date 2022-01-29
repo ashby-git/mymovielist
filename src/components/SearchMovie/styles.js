@@ -1,6 +1,8 @@
 import styled from "styled-components";
 
-export const AddPage = styled.div``;
+export const AddPage = styled.div`
+  padding: 80px 0 0 0;
+`;
 
 export const Container = styled.div`
   padding-right: 15px;

@@ -9,6 +9,9 @@ export const Header = styled.header`
   justify-content: space-between;
   align-items: center;
   padding: 0 10%;
+  position: fixed;
+  width: 80%;
+  z-index: 20;
 `;
 
 export const LogoLink = styled(Link)`

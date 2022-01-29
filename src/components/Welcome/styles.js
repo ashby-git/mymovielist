@@ -5,6 +5,7 @@ export const WelcomeContainer = styled.section`
   max-width: max-content;
   display: grid;
   margin: 0 auto;
+  padding: 80px 0 0 0;
 `;
 
 export const Title = styled.h1`

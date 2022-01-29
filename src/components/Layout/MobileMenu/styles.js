@@ -10,8 +10,6 @@ export const MobileMenuContainer = styled.aside`
   display: flex;
   top: 0;
   left: 0;
-  border-bottom-left-radius: 10px;
-  border-bottom-right-radius: 10px;
   box-shadow: 0px 1px 20px #c8cae7;
   transition: 0.3s ease-in-out;
   opacity: ${({ isOpen }) => (isOpen ? "100%" : "0")};

@@ -8,7 +8,7 @@ const ProfileContent = () => {
   const { watchlist, watched } = useContext(GlobalContext);
 
   return (
-    <>
+    <S.ProfileContentContainer>
       <S.MovieListSection>
         <S.SectionContainer>
           <S.SectionHeader>
@@ -51,7 +51,7 @@ const ProfileContent = () => {
           )}
         </S.SectionContainer>
       </S.MovieListSection>
-    </>
+    </S.ProfileContentContainer>
   );
 };
 

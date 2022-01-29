@@ -73,36 +73,41 @@ const AuthForm = () => {
   };
 
   return (
-    <S.AuthFormContainer>
-      <S.FormTitle>{isLogin ? "Login" : "Sign Up"}</S.FormTitle>
-      <form onSubmit={submitHandler}>
-        <S.FormContent>
-          <label htmlFor="email">Your Email</label>
-          <input type="email" id="email" required ref={emailInputRef} />
-        </S.FormContent>
-        <S.FormContent>
-          <label htmlFor="password">Your Password</label>
-          <input
-            type="password"
-            id="password"
-            required
-            ref={passwordInputRef}
-          />
-        </S.FormContent>
-        <S.Actions>
-          {!isLoading && (
-            <S.FormButton>{isLogin ? "Login" : "Create Account"}</S.FormButton>
-          )}
-          {isLoading && (
-            //   <p>Sending request...</p>
-            <LoadingSpinner />
-          )}
-          <S.FormButtonToggle type="button" onClick={switchAuthModeHandler}>
-            {isLogin ? "Create new account" : "Login with existing account"}
-          </S.FormButtonToggle>
-        </S.Actions>
-      </form>
-    </S.AuthFormContainer>
+    <>
+      <S.PageBreak />
+      <S.AuthFormContainer>
+        <S.FormTitle>{isLogin ? "Login" : "Sign Up"}</S.FormTitle>
+        <form onSubmit={submitHandler}>
+          <S.FormContent>
+            <label htmlFor="email">Your Email</label>
+            <input type="email" id="email" required ref={emailInputRef} />
+          </S.FormContent>
+          <S.FormContent>
+            <label htmlFor="password">Your Password</label>
+            <input
+              type="password"
+              id="password"
+              required
+              ref={passwordInputRef}
+            />
+          </S.FormContent>
+          <S.Actions>
+            {!isLoading && (
+              <S.FormButton>
+                {isLogin ? "Login" : "Create Account"}
+              </S.FormButton>
+            )}
+            {isLoading && (
+              //   <p>Sending request...</p>
+              <LoadingSpinner />
+            )}
+            <S.FormButtonToggle type="button" onClick={switchAuthModeHandler}>
+              {isLogin ? "Create new account" : "Login with existing account"}
+            </S.FormButtonToggle>
+          </S.Actions>
+        </form>
+      </S.AuthFormContainer>
+    </>
   );
 };
 

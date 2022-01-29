@@ -1,5 +1,9 @@
 import styled from "styled-components";
 
+export const ProfileContentContainer = styled.div`
+  padding: 80px 0 0 0;
+`;
+
 export const MovieListSection = styled.div`
   padding: 30px 10px;
 `;
