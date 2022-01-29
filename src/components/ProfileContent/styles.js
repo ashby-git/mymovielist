@@ -1,7 +1,7 @@
 import styled from "styled-components";
 
 export const MovieListSection = styled.div`
-  padding: 30px 0;
+  padding: 30px 10px;
 `;
 
 export const SectionContainer = styled.div`
@@ -21,6 +21,14 @@ export const SectionHeader = styled.div`
 export const SectionTitle = styled.h1`
   color: #032541;
   margin: 0;
+  font-size: 2.5rem;
+  font-weight: bold;
+  width: 100%;
+  border-bottom: 3px solid #032541;
+
+  @media (max-width: 450px) {
+    font-size: 1.7rem;
+  }
 `;
 
 export const CountPill = styled.span`
@@ -31,6 +39,8 @@ export const CountPill = styled.span`
   font-weight: 600;
   border-radius: 999px;
   color: #032541;
+  min-width: 80px;
+  margin: 35px 0 0 8px;
 `;
 
 export const MovieGrid = styled.div`

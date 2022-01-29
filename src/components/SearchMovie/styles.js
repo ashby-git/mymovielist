@@ -27,7 +27,11 @@ export const AddContent = styled.div`
 export const InputWrapper = styled.div``;
 
 export const Input = styled.input`
-  width: 100%;
+  display: block;
+  margin: 0 auto;
+  width: 80vw;
+  max-width: 85%;
+
   background-color: #032541;
   padding: 10px;
   border-radius: 5px;

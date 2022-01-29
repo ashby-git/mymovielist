@@ -2,10 +2,11 @@ import styled from "styled-components";
 
 export const ResultCardContainer = styled.div`
   display: flex;
-  /* margin-bottom: 20px; */
 `;
 
-export const PosterWrapper = styled.div``;
+export const PosterWrapper = styled.div`
+  margin: auto 0;
+`;
 
 export const Image = styled.img`
   width: 75px;
@@ -65,6 +66,11 @@ export const Btn = styled.button`
   font-size: 1rem;
   transition: all 0.3s ease;
   line-height: 1.1;
+
+  @media (max-width: 500px) {
+    padding: 5px 10px;
+    margin-top: 5px;
+  }
 
   &:hover {
     background-color: #1aa762;
