@@ -13,6 +13,7 @@ export const InnerCardControls = styled.div`
   padding: 3px;
   opacity: 0;
   transition: all 0.3s ease;
+  width: max-content;
 
   ${MovieCardContainer}:hover & {
     opacity: 1;
