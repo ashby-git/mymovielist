@@ -1,5 +1,6 @@
-import React, { useCallback, useEffect, useState } from "react";
-import app from "..//firebase/firebase-utils";
+import React, { useEffect, useState } from "react";
+import app from "../firebase/firebase-utils";
+import { getAuth, onAuthStateChanged, signOut } from "firebase/auth";
 import { Spinner } from "../components/UI/LoadingSpinner/styles";
 
 const AuthContext = React.createContext({
@@ -12,20 +13,36 @@ export const AuthContextProvider = (props) => {
   const [pending, setPending] = useState(true);
 
   useEffect(() => {
-    app.auth().onAuthStateChanged((user) => {
+    const auth = getAuth(app);
+    onAuthStateChanged(auth, (user) => {
       setCurrentUser(user);
       setPending(false);
     });
+
+    // app.auth().onAuthStateChanged((user) => {
+    //   setCurrentUser(user);
+    //   setPending(false);
+    // });
   }, []);
 
   if (pending) {
-    return <Spinner />;
+    return (
+      <div className="centered">
+        <Spinner />
+      </div>
+    );
   }
 
   const userIsLoggedIn = !!currentUser;
 
   const logoutHandler = () => {
-    app.auth().signOut();
+    // app.auth().signOut();
+    signOut(getAuth())
+      .then(() => {})
+      .catch((error) => {
+        console.log(error);
+        alert(error);
+      });
   };
 
   const contextValue = {
