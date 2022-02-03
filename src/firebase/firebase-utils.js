@@ -1,4 +1,5 @@
 import { initializeApp } from "firebase/app";
+import { getFirestore } from "firebase/firestore";
 // import { getAuth, onAuthStateChanged } from "firebase/auth";
 
 // import * as firebase from "firebase/app";
@@ -28,6 +29,7 @@ const firebaseConfig = {
 // });
 
 const app = initializeApp(firebaseConfig);
+export const db = getFirestore();
 
 // export const UserId = () => {
 //   const auth = getAuth();
