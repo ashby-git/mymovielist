@@ -21,8 +21,10 @@ function App() {
   const dispatch = useDispatch();
 
   useEffect(() => {
-    dispatch(fetchMovieData());
-  }, [dispatch]);
+    if (authCtx.isLoggedIn) {
+      dispatch(fetchMovieData());
+    }
+  }, [dispatch, authCtx]);
 
   useEffect(() => {
     if (isInitial) {
