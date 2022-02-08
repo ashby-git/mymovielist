@@ -8,6 +8,9 @@ const movieSlice = createSlice({
     changed: false,
   },
   reducers: {
+    resetMovies(state, action) {
+      Object.assign(state, action.payload);
+    },
     replaceMovies(state, action) {
       state.watchlist = action.payload.watchlist;
       state.watched = action.payload.watched;

@@ -23,6 +23,14 @@ export const fetchMovieData = () => {
       );
     } else {
       console.log("No such document!");
+      dispatch(
+        movieActions.resetMovies({
+          watchlist: [],
+          watched: [],
+          changed: false,
+        })
+      );
+      console.log("app.js reset moviedata");
     }
   };
 };
@@ -38,6 +46,13 @@ export const sendMovieData = (movies) => {
     });
   };
 };
+
+// export const resetMovies = () => {
+//   movieActions.resetMovies({
+//     watchlist: [],
+//     watched: [],
+//   });
+// };
 
 //////////////////////////////////////////////
 
