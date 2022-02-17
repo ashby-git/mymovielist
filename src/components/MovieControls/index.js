@@ -1,6 +1,5 @@
-import React, { useContext } from "react";
+import React from "react";
 import { useDispatch } from "react-redux";
-import { GlobalContext } from "../../store/GlobalState";
 import { FaEye, FaEyeSlash, FaTimes } from "react-icons/fa";
 import * as S from "./styles";
 import { movieActions } from "../../store/movie-slice";
@@ -20,28 +19,15 @@ export const MovieControls = ({ type, movie }) => {
     dispatch(movieActions.moveMovieToWatchlist(movie));
   };
 
-  // const {
-  //   removeMovieFromWatchlist,
-  //   addMovieToWatched,
-  //   moveToWatchlist,
-  //   removeFromWatched,
-  // } = useContext(GlobalContext);
-
   return (
     <S.InnerCardControls>
       {type === "watchlist" && (
         <>
-          <S.ControlButton
-            // onClick={() => addMovieToWatched(movie)}
-            onClick={addMovieToWatchedHandler}
-          >
+          <S.ControlButton onClick={addMovieToWatchedHandler}>
             <FaEye />
           </S.ControlButton>
 
-          <S.ControlButton
-            // onClick={() => removeMovieFromWatchlist(movie.id)}
-            onClick={removeMovieFromWatchlistHandler}
-          >
+          <S.ControlButton onClick={removeMovieFromWatchlistHandler}>
             <FaTimes />
           </S.ControlButton>
         </>
@@ -49,17 +35,11 @@ export const MovieControls = ({ type, movie }) => {
 
       {type === "watched" && (
         <>
-          <S.ControlButton
-            // onClick={() => moveToWatchlist(movie)}
-            onClick={moveMovieToWatchlistHandler}
-          >
+          <S.ControlButton onClick={moveMovieToWatchlistHandler}>
             <FaEyeSlash />
           </S.ControlButton>
 
-          <S.ControlButton
-            // onClick={() => removeFromWatched(movie.id)}
-            onClick={removeMovieFromWatchedHandler}
-          >
+          <S.ControlButton onClick={removeMovieFromWatchedHandler}>
             <FaTimes />
           </S.ControlButton>
         </>

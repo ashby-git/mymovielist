@@ -10,7 +10,6 @@ import HomePage from "./pages/HomePage";
 import ProfilePage from "./pages/ProfilePage";
 import SearchPage from "./pages/SearchPage";
 import AuthContext from "./store/auth-context";
-// import { GlobalProvider } from "./store/GlobalState";
 
 let isInitial = true;
 
@@ -38,7 +37,6 @@ function App() {
   }, [movies, dispatch]);
 
   return (
-    // <GlobalProvider>
     <Layout>
       <Switch>
         <Route path="/" exact>
@@ -62,7 +60,6 @@ function App() {
         </Route>
       </Switch>
     </Layout>
-    // </GlobalProvider>
   );
 }
 
