@@ -28,8 +28,6 @@ const AuthForm = () => {
       const enteredEmail = emailInputRef.current.value;
       const enteredPassword = passwordInputRef.current.value;
 
-      // optional: Add validation
-
       setIsLoading(true);
       const auth = getAuth();
 
@@ -37,18 +35,22 @@ const AuthForm = () => {
         if (isLogin) {
           // await app
           // .getAuth()
-          signInWithEmailAndPassword(auth, enteredEmail, enteredPassword);
+          await signInWithEmailAndPassword(auth, enteredEmail, enteredPassword);
+          history.replace("/profile");
         } else {
           // await app
           // .getAuth()
-          createUserWithEmailAndPassword(auth, enteredEmail, enteredPassword);
+          await createUserWithEmailAndPassword(
+            auth,
+            enteredEmail,
+            enteredPassword
+          );
+          history.replace("/");
         }
-        setIsLoading(false);
-        history.replace("/");
       } catch (error) {
-        console.log(error);
-        alert(error);
+        alert(error.message);
       }
+      setIsLoading(false);
     },
     [history, isLogin]
   );
@@ -78,10 +80,7 @@ const AuthForm = () => {
                 {isLogin ? "Login" : "Create Account"}
               </S.FormButton>
             )}
-            {isLoading && (
-              //   <p>Sending request...</p>
-              <LoadingSpinner />
-            )}
+            {isLoading && <LoadingSpinner />}
             <S.FormButtonToggle type="button" onClick={switchAuthModeHandler}>
               {isLogin ? "Create new account" : "Login with existing account"}
             </S.FormButtonToggle>
