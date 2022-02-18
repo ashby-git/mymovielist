@@ -44,8 +44,11 @@ const AuthForm = () => {
         }
       } catch (error) {
         alert(error.message);
+        setIsLoading(false);
       }
-      setIsLoading(false);
+      return () => {
+        setIsLoading(false);
+      };
     },
     [history, isLogin]
   );
