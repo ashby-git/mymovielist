@@ -40,6 +40,7 @@ export const FormContent = styled.div`
     width: 100%;
     text-align: left;
     padding: 0.25rem;
+    box-sizing: border-box;
   }
 `;
 
