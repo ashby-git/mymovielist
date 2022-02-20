@@ -6,7 +6,6 @@ export const PageBreak = styled.div`
 
 export const AuthFormContainer = styled.section`
   margin: 3rem auto;
-  width: 95%;
   max-width: 25rem;
   border-radius: 6px;
   background-color: #38015c;
